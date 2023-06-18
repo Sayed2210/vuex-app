@@ -1,18 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>this is home page</h1>
+    <h2>My Name is {{ this.$store.state.name }}</h2>
+    <h2>My Age is {{ this.$store.state.age }}</h2>
+    <input type="text" name="name" v-model="this.$store.state.name" />
+    <h3>{{ this.$store.getters.yourData }}</h3>
+    <button @click="changname()">change name</button>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
+<script setup>
+const changname = () => {
+  this.$store.commit("changeTitle");
 };
 </script>
