@@ -1,20 +1,11 @@
 import { createStore } from "vuex";
-
+import getProducts from "./getproducts/getProducts";
 export default createStore({
-  state: {
-    name: "Elsayed",
-    age: 18,
-  },
-  getters: {
-    yourData(state) {
-      return "Name " + state.name + " Age " + state.age;
-    },
-  },
-  mutations: {
-    changeTitle(state) {
-      state.name = "Ahmed";
-    },
-  },
+  state: {},
+  getters: {},
+  mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    getProducts,
+  },
 });
